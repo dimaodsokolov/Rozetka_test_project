@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class MainPage {
     private  WebDriver driver;
 
-    private  String goodsName = "наушники";
+    private  String goodsName = "Наушники Sennheiser HD 458 BT Black (508968)";
 
     @FindBy(name = "search")
     private WebElement searchField;
@@ -24,8 +24,10 @@ public class MainPage {
         searchField.clear();
         searchField.sendKeys(goodsName);
     }
-    public MainPage openSearchPage(){
+    public SearchPage openSearchPage(){
         searchButton.click();
-        return this;
+        return new SearchPage(this.driver);
     }
+
+
 }
